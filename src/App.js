@@ -15,7 +15,9 @@ import {
   Send,
   FileText,
   ToggleLeft,
-  LayoutTemplate
+  LayoutTemplate,
+  ToolCase,
+  Library
 } from 'lucide-react';
 
 const App = () => {
@@ -92,8 +94,10 @@ const App = () => {
                     company: "Solera Holdings LLC",
                     date: "Aug 2022 - Dec 2024",
                     points: [
-                      "Engineered a high-performance Canvas-based grid handling 10M+ records.",
-                      "Optimized backend APIs with DuckDB reducing latency by 40%."
+                      "Streamlined CI/CD workflows for release management, resulting in a 25% increase in deployment frequency and improved system stability across production environments",
+                      "Refactored 10+ microservices to improve code modularity, slashing SonarQube reported bugs and technical debt by 50%",
+                      "Championed Test-Driven Development (TDD) practices across the development team, increasing unit test coverage from 15% to 90% using JUnit.",
+                      "Resolved critical data dependency bottlenecks on high-traffic landing pages, boosting page load speeds by 50% and directly contributing to a measurable increase in user retention and revenue"
                     ]
                   },
                   {
@@ -101,8 +105,8 @@ const App = () => {
                     company: "Innovation Incubator",
                     date: "Jun 2022 - Jul 2022",
                     points: [
-                      "Developed e-commerce solutions using Java and MySQL.",
-                      "Designed dynamic interfaces in Figma and translated to frontend."
+                      "Conducted in-depth compatibility testing and gap analysis for Low-Code/No-Code (LCNC) integrations, ensuring 100% alignment with complex client requirements and strict engineering constraints.",
+                      "Evaluated and implemented Low-Code architectures to accelerate prototype delivery, while maintaining adherence to technical engineering standards."
                     ]
                   }
                 ].map((job, i) => (
@@ -123,9 +127,9 @@ const App = () => {
               <h2 className="text-sm font-bold uppercase tracking-widest mb-6 text-stone-400">02. Projects</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                   { title: "NeuroGen Name", desc: "Generative AI using PyTorch to generate unique names via neural networks." },
-                   { title: "Canvas Data Grid", desc: "High-performance enterprise data grid capable of rendering 1M+ rows." },
-                   { title: "Doubtcool", desc: "Educational blogging platform with custom search engine." }
+                   { title: "Automated Malware Analysis", desc: "Robust hybrid security system capable of analyzing both static binary signatures and dynamic runtime behaviors to identify stealthy threats." },
+                   { title: "I Recon : An Alert App", desc: "Caregiver assistance  for Locked-in Syndrome(LiS) patients by detection and classification of eye blinks with high precision." },
+                   { title: "Home EI", desc: "Design project based on IoT-based home ecosystem integrating principles of Emotional Intelligence (EI) to enhance userinteraction and comfort" }
                 ].map((p, i) => (
                   <div key={i} className="border border-stone-200 p-6 hover:border-stone-900 transition-colors">
                     <h3 className="font-bold mb-2">{p.title}</h3>
@@ -138,9 +142,11 @@ const App = () => {
             <section>
               <h2 className="text-sm font-bold uppercase tracking-widest mb-6 text-stone-400">03. Skills</h2>
               <div className="text-sm leading-loose text-stone-700">
-                <span className="font-bold text-stone-900">Frontend:</span> React, Next.js, Tailwind, TypeScript, Framer Motion <br/>
-                <span className="font-bold text-stone-900">Backend:</span> Node.js, Postgres, Python, Redis, DuckDB <br/>
-                <span className="font-bold text-stone-900">Design:</span> Figma, Adobe XD, Canvas API
+                <span className="font-bold text-stone-900">Frameworks:</span> .NET Framework, AngularJS, ASP .NET, ADO .NET, REST, NUnit, Selenium, WordPress, Bubble <br/>
+                <span className="font-bold text-stone-900">Languages:</span>C#, Java, Python, C/C++, MS SQL, JavaScript, HTML/CSS, R <br/>
+                <span className="font-bold text-stone-900">Developer Tools:</span>Git, Postman, Swagger, Jenkins, Octopus, TeamCity, Redis, AWS, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse <br/>
+                <span className="font-bold text-stone-900">Libraries:</span> LINQ, AWS SDK, AutoMapper, Dapper, Entity Framework, SignalR, NSubstitute, OpenCV, MediaPipe <br/>
+                <span className="font-bold text-stone-900">Package Managers:</span> Nuget, Bower, Yarn
               </div>
             </section>
           </main>
@@ -220,8 +226,7 @@ const App = () => {
             
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            I'm a Full Stack Engineer specializing in building exceptional digital products.
-            Currently focused on building accessible, human-centered products at <span className="text-slate-200 font-semibold">TechCorp</span>.
+            Software Engineer with a background in modernizing legacy architectures and improving code quality metrics by 50%. I combine practical development skills with a strong academic foundation to solve complex technical problems and deliver reliable software.          
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-4">
@@ -251,13 +256,13 @@ const App = () => {
               </h2>
               <div className="space-y-6 text-slate-400 leading-relaxed">
                 <p>
-                  Hello! I'm Abin, a software engineer who enjoys bridging the gap between engineering and design. My interest in web development started back in 2020 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is pretty fun!
+                  I am a Master’s of Computer Science student at Concordia University, driven by a passion for building reliable, scalable software. With a professional background in full-stack development, I have successfully modernized legacy systems and utilized Test-Driven Development (TDD) to reduce technical debt by 50%
                 </p>
                 <p>
-                  Fast-forward to today, and I've had the privilege of building software for an <span className="text-cyan-400">advertising agency</span>, a <span className="text-cyan-400">start-up</span>, and a <span className="text-cyan-400">huge corporation</span>.
+                  Fast-forward to today, and I've had the privilege of building software for <span className="text-cyan-400">Solera Holdings</span>, and <span className="text-cyan-400">Innovation Incubator</span>.
                 </p>
                 <p>
-                  My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
+                  I am now seeking a co-op internship where I can apply this blend of industry rigor and continuous learning to solve real-world engineering challenges.
                 </p>
               </div>
             </div>
@@ -266,10 +271,10 @@ const App = () => {
                <h3 className="text-xl font-bold text-slate-100 mb-6">Tech Stack</h3>
                <div className="grid grid-cols-2 gap-4">
                   {[
-                    { icon: <Code2 size={20} />, title: "Frontend", skills: "React, Next.js, Tailwind, TypeScript" },
-                    { icon: <Database size={20} />, title: "Backend", skills: "Node.js, Postgres, Python, Redis" },
+                    { icon: <Code2 size={20} />, title: "Framework", skills: ".NET Framework, AngularJS, ASP .NET, ADO .NET, REST, NUnit, Selenium, WordPress, Bubble" },
+                    { icon: <ToolCase size={20} />, title: "Language", skills: "C#, Java, Python, C/C++, MS SQL, JavaScript, HTML/CSS, R" },
                     { icon: <Cpu size={20} />, title: "Architecture", skills: "Serverless, Microservices, Docker" },
-                    { icon: <Globe size={20} />, title: "Web3", skills: "Solidity, Ethers.js, IPFS" }
+                    { icon: <Library size={20} />, title: "Libraries", skills: "LINQ, AWS SDK, AutoMapper, Dapper, Entity Framework, SignalR, NSubstitute, OpenCV, MediaPipe" }
                   ].map((stack, idx) => (
                     <div key={idx} className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all group">
                       <div className="text-cyan-500 mb-3 group-hover:scale-110 transition-transform duration-300">{stack.icon}</div>
@@ -297,14 +302,14 @@ const App = () => {
                 role: "Software Developer",
                 company: "Solera Holdings LLC",
                 period: "Aug 2022 - Dec 2024",
-                description: "Engineered a high-performance Canvas-based grid handling 10M+ records. Optimized backend APIs with DuckDB reducing latency by 40%.",
+                description: "Streamlined CI/CD workflows for release management, resulting in a 25% increase in deployment frequency and improved system stability across production environments. Refactored 10+ microservices to improve code modularity, slashing SonarQube reported bugs and technical debt by 50%. Championed Test-Driven Development (TDD) practices across the development team, increasing unit test coverage from 15% to 90% using NUnit. Resolved critical data dependency bottlenecks on high-traffic landing pages, boosting page load speeds by 50% and directly contributing to a measurable increase in user retention and revenue",
                 tech: ["React", "TypeScript", "DuckDB", "Canvas API"]
               },
               {
                 role: "Software Developer Intern",
                 company: "Innovation Incubator",
                 period: "Jun 2022 - Jul 2022",
-                description: "Developed e-commerce solutions using Java and MySQL. Designed dynamic interfaces in Figma and translated them to responsive frontend code.",
+                description: "Conducted in-depth compatibility testing and gap analysis for Low-Code/No-Code (LCNC) integrations, ensuring 100% alignment with complex client requirements and strict engineering constraints. Evaluated and implemented Low-Code architectures to accelerate prototype delivery, while maintaining adherence to technical engineering standards.",
                 tech: ["Java", "MySQL", "HTML/CSS", "Figma"]
               }
             ].map((job, idx) => (
@@ -337,21 +342,21 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "NeuroGen Name",
-                desc: "A Generative AI project using PyTorch to generate unique names via neural networks. Trained on datasets of over 50k names.",
-                tags: ["Python", "PyTorch", "AI/ML"],
+                title: "Automated Malware Analysis",
+                desc: "Robust hybrid security system capable of analyzing both static binary signatures and dynamic runtime behaviors to identify stealthy threats.",
+                tags: ["Python", "PyTorch", "OpenCV"],
                 color: "from-purple-500/20 to-blue-500/20"
               },
               {
-                title: "Canvas Data Grid",
-                desc: "High-performance data grid capable of rendering 1 million rows without virtualization lag. Built for enterprise analytics.",
-                tags: ["React", "Canvas API", "TypeScript"],
+                title: "I Recon : An Alert App",
+                desc: "Caregiver assistance for Locked-in Syndrome(LiS) patients by detection and classification of eye blinks with high precision.",
+                tags: ["MediaPipe", "Python", "Firebase"],
                 color: "from-cyan-500/20 to-emerald-500/20"
               },
               {
-                title: "Doubtcool",
-                desc: "Educational blogging platform with networking features for students. Features a custom search engine and profile system.",
-                tags: ["PHP", "MySQL", "jQuery"],
+                title: "Home EI",
+                desc: "Design project based on IoT-based home ecosystem integrating principles of Emotional Intelligence (EI) to enhance userinteraction and comfort",
+                tags: ["LoRaWAN", "Python", "TensorFlow"],
                 color: "from-orange-500/20 to-red-500/20"
               }
             ].map((project, idx) => (
@@ -416,7 +421,7 @@ const App = () => {
         </div>
         
         <footer className="text-center text-slate-600 mt-20 text-sm">
-          <p>@2025 ABS. \nMerci!</p>
+          <p>@2026 ABS. Merci!</p>
         </footer>
       </section>
     </div>
