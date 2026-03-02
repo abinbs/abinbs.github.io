@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  ExternalLink, 
-  Code2, 
-  Terminal, 
-  Cpu, 
-  Database, 
-  Globe, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Code2,
+  Terminal,
+  Cpu,
+  Database,
+  Globe,
   ChevronDown,
   Briefcase,
   User,
@@ -19,6 +19,9 @@ import {
   ToolCase,
   Library
 } from 'lucide-react';
+import { SplineScene } from "./components/ui/spline";
+import { Card } from "./components/ui/card";
+import { Spotlight } from "./components/ui/spotlight";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -29,7 +32,7 @@ const App = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
       const sections = ['home', 'about', 'experience', 'projects', 'contact'];
       const current = sections.find(section => {
@@ -63,7 +66,7 @@ const App = () => {
           {/* Minimal Header */}
           <nav className="flex justify-between items-center mb-16 pb-4 border-b-2 border-stone-900">
             <div className="font-bold text-xl tracking-tighter">ABS</div>
-            <button 
+            <button
               onClick={() => setIsMinimal(false)}
               className="flex items-center gap-2 text-sm hover:underline decoration-stone-400 underline-offset-4"
             >
@@ -127,9 +130,9 @@ const App = () => {
               <h2 className="text-sm font-bold uppercase tracking-widest mb-6 text-stone-400">02. Projects</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                   { title: "Automated Malware Analysis", desc: "Robust hybrid security system capable of analyzing both static binary signatures and dynamic runtime behaviors to identify stealthy threats." },
-                   { title: "I Recon : An Alert App", desc: "Caregiver assistance  for Locked-in Syndrome(LiS) patients by detection and classification of eye blinks with high precision." },
-                   { title: "Home EI", desc: "Design project based on IoT-based home ecosystem integrating principles of Emotional Intelligence (EI) to enhance userinteraction and comfort" }
+                  { title: "Automated Malware Analysis", desc: "Robust hybrid security system capable of analyzing both static binary signatures and dynamic runtime behaviors to identify stealthy threats." },
+                  { title: "I Recon : An Alert App", desc: "Caregiver assistance  for Locked-in Syndrome(LiS) patients by detection and classification of eye blinks with high precision." },
+                  { title: "Home EI", desc: "Design project based on IoT-based home ecosystem integrating principles of Emotional Intelligence (EI) to enhance userinteraction and comfort" }
                 ].map((p, i) => (
                   <div key={i} className="border border-stone-200 p-6 hover:border-stone-900 transition-colors">
                     <h3 className="font-bold mb-2">{p.title}</h3>
@@ -142,10 +145,10 @@ const App = () => {
             <section>
               <h2 className="text-sm font-bold uppercase tracking-widest mb-6 text-stone-400">03. Skills</h2>
               <div className="text-sm leading-loose text-stone-700">
-                <span className="font-bold text-stone-900">Frameworks:</span> .NET Framework, AngularJS, ASP .NET, ADO .NET, REST, NUnit, Selenium, WordPress, Bubble <br/>
-                <span className="font-bold text-stone-900">Languages:</span>C#, Java, Python, C/C++, MS SQL, JavaScript, HTML/CSS, R <br/>
-                <span className="font-bold text-stone-900">Developer Tools:</span>Git, Postman, Swagger, Jenkins, Octopus, TeamCity, Redis, AWS, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse <br/>
-                <span className="font-bold text-stone-900">Libraries:</span> LINQ, AWS SDK, AutoMapper, Dapper, Entity Framework, SignalR, NSubstitute, OpenCV, MediaPipe <br/>
+                <span className="font-bold text-stone-900">Frameworks:</span> .NET Framework, AngularJS, ASP .NET, ADO .NET, REST, NUnit, Selenium, WordPress, Bubble <br />
+                <span className="font-bold text-stone-900">Languages:</span>C#, Java, Python, C/C++, MS SQL, JavaScript, HTML/CSS, R <br />
+                <span className="font-bold text-stone-900">Developer Tools:</span>Git, Postman, Swagger, Jenkins, Octopus, TeamCity, Redis, AWS, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse <br />
+                <span className="font-bold text-stone-900">Libraries:</span> LINQ, AWS SDK, AutoMapper, Dapper, Entity Framework, SignalR, NSubstitute, OpenCV, MediaPipe <br />
                 <span className="font-bold text-stone-900">Package Managers:</span> Nuget, Bower, Yarn
               </div>
             </section>
@@ -163,17 +166,17 @@ const App = () => {
   // --- RICH / INTERACTIVE VIEW COMPONENT ---
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-cyan-500/30">
-      
+
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800 py-4' : 'bg-transparent py-6'}`}>
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer" onClick={() => scrollTo('home')}>
             ABS
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
             {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
-              <button 
+              <button
                 key={item}
                 onClick={() => scrollTo(item.toLowerCase())}
                 className={`hover:text-cyan-400 transition-colors ${activeSection === item.toLowerCase() ? 'text-cyan-400' : ''}`}
@@ -181,8 +184,8 @@ const App = () => {
                 {item}
               </button>
             ))}
-            
-            <button 
+
+            <button
               onClick={() => setIsMinimal(true)}
               className="flex items-center gap-2 px-3 py-1 rounded-md hover:bg-slate-800 transition-all text-slate-500 hover:text-cyan-400"
               title="Switch to Minimal View"
@@ -193,15 +196,15 @@ const App = () => {
           </div>
 
           <div className="flex items-center gap-4">
-             {/* Mobile Minimal Toggle */}
-            <button 
+            {/* Mobile Minimal Toggle */}
+            <button
               onClick={() => setIsMinimal(true)}
               className="md:hidden text-slate-400 hover:text-cyan-400"
             >
               <ToggleLeft size={20} />
             </button>
 
-            <button 
+            <button
               onClick={() => scrollTo('contact')}
               className="px-4 py-2 rounded-full border border-cyan-500/30 text-cyan-400 text-sm hover:bg-cyan-500/10 transition-all"
             >
@@ -212,35 +215,54 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        {/* Background Blobs */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden px-6">
+        <div className="max-w-7xl mx-auto w-full">
+          <Card className="w-full min-h-[600px] md:h-[700px] bg-slate-950/50 border-slate-800 relative overflow-hidden backdrop-blur-sm">
+            <Spotlight
+              className="-top-40 left-0 md:left-60 md:-top-20"
+              fill="white"
+            />
 
-        <div className="max-w-4xl mx-auto px-6 text-center z-10">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-medium tracking-wide">
-            Hello I'm
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-slate-100 mb-6 tracking-tight">
-            Abin Binu Sam <br />
-            
-          </h1>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Software Engineer with a background in modernizing legacy architectures and improving code quality metrics by 50%. I combine practical development skills with a strong academic foundation to solve complex technical problems and deliver reliable software.          
-          </p>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <button onClick={() => scrollTo('projects')} className="px-8 py-3 rounded-lg bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-all w-full md:w-auto">
-              View Projects
-            </button>
-            <button className="px-8 py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-medium hover:border-slate-600 transition-all flex items-center gap-2 w-full md:w-auto justify-center">
-              <FileText size={18} />
-              Resume
-            </button>
-          </div>
+            <div className="flex flex-col lg:flex-row h-full">
+              {/* Left content */}
+              <div className="flex-1 p-8 lg:p-16 relative z-10 flex flex-col justify-center">
+                <div className="inline-block mb-4 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 text-xs font-medium tracking-wide w-fit">
+                  Hello I'm
+                </div>
+                <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-slate-100 to-slate-400 mb-6 tracking-tight">
+                  Abin Binu Sam <br />
+                </h1>
+                <p className="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
+                  Software Engineer with a background in modernizing legacy architectures and improving code quality metrics by 50%. I combine practical development skills with a strong academic foundation to solve complex technical problems and deliver reliable software.
+                </p>
 
-          <div className="mt-20 animate-bounce text-slate-600">
-            <ChevronDown className="mx-auto" size={24} />
+                <div className="flex flex-col md:flex-row items-center gap-4">
+                  <button onClick={() => scrollTo('projects')} className="px-8 py-3 rounded-lg bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-all w-full md:w-auto">
+                    View Projects
+                  </button>
+                  <button className="px-8 py-3 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-medium hover:border-slate-600 transition-all flex items-center gap-2 w-full md:w-auto justify-center">
+                    <FileText size={18} />
+                    Resume
+                  </button>
+                </div>
+              </div>
+
+              {/* Right content */}
+              <div className="flex-1 relative min-h-[400px] lg:min-h-full">
+                <div className="absolute inset-0 z-0">
+                  {/* Additional background effects to blend Spline scene */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 lg:from-slate-950/30 to-transparent z-10"></div>
+                </div>
+                <SplineScene
+                  scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+                  className="w-full h-full relative z-20"
+                />
+              </div>
+            </div>
+          </Card>
+
+          <div className="mt-12 animate-bounce text-slate-600 flex justify-center w-full">
+            <ChevronDown size={24} />
           </div>
         </div>
       </section>
@@ -266,23 +288,23 @@ const App = () => {
                 </p>
               </div>
             </div>
-            
+
             <div className="w-full md:w-1/2">
-               <h3 className="text-xl font-bold text-slate-100 mb-6">Tech Stack</h3>
-               <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { icon: <Code2 size={20} />, title: "Framework", skills: ".NET Framework, AngularJS, ASP .NET, ADO .NET, REST, NUnit, Selenium, WordPress, Bubble" },
-                    { icon: <ToolCase size={20} />, title: "Language", skills: "C#, Java, Python, C/C++, MS SQL, JavaScript, HTML/CSS, R" },
-                    { icon: <Cpu size={20} />, title: "Architecture", skills: "Serverless, Microservices, Docker" },
-                    { icon: <Library size={20} />, title: "Libraries", skills: "LINQ, AWS SDK, AutoMapper, Dapper, Entity Framework, SignalR, NSubstitute, OpenCV, MediaPipe" }
-                  ].map((stack, idx) => (
-                    <div key={idx} className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all group">
-                      <div className="text-cyan-500 mb-3 group-hover:scale-110 transition-transform duration-300">{stack.icon}</div>
-                      <h4 className="font-bold text-slate-200 mb-1">{stack.title}</h4>
-                      <p className="text-sm text-slate-500">{stack.skills}</p>
-                    </div>
-                  ))}
-               </div>
+              <h3 className="text-xl font-bold text-slate-100 mb-6">Tech Stack</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: <Code2 size={20} />, title: "Framework", skills: ".NET Framework, AngularJS, ASP .NET, ADO .NET, REST, NUnit, Selenium, WordPress, Bubble" },
+                  { icon: <ToolCase size={20} />, title: "Language", skills: "C#, Java, Python, C/C++, MS SQL, JavaScript, HTML/CSS, R" },
+                  { icon: <Cpu size={20} />, title: "Architecture", skills: "Serverless, Microservices, Docker" },
+                  { icon: <Library size={20} />, title: "Libraries", skills: "LINQ, AWS SDK, AutoMapper, Dapper, Entity Framework, SignalR, NSubstitute, OpenCV, MediaPipe" }
+                ].map((stack, idx) => (
+                  <div key={idx} className="p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all group">
+                    <div className="text-cyan-500 mb-3 group-hover:scale-110 transition-transform duration-300">{stack.icon}</div>
+                    <h4 className="font-bold text-slate-200 mb-1">{stack.title}</h4>
+                    <p className="text-sm text-slate-500">{stack.skills}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -295,7 +317,7 @@ const App = () => {
             <Briefcase className="text-cyan-500" />
             Experience
           </h2>
-          
+
           <div className="space-y-12">
             {[
               {
@@ -363,9 +385,9 @@ const App = () => {
               <div key={idx} className="group relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:-translate-y-2 transition-transform duration-300">
                 {/* Gradient Header */}
                 <div className={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center`}>
-                   <Code2 size={48} className="text-slate-100/50 group-hover:scale-110 transition-transform duration-500" />
+                  <Code2 size={48} className="text-slate-100/50 group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                
+
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-bold text-slate-100">{project.title}</h3>
@@ -398,7 +420,7 @@ const App = () => {
           <p className="text-slate-400 mb-10 text-lg">
             Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
           </p>
-          
+
           <div className="flex justify-center gap-6 mb-12">
             <a href="https://github.com/abinbs" className="p-3 rounded-full bg-slate-800 text-slate-400 hover:text-cyan-400 hover:bg-slate-700 transition-all">
               <Github size={24} />
@@ -411,15 +433,15 @@ const App = () => {
             </a>
           </div>
 
-          <a 
-            href="mailto:abinbinusam@gmail.com" 
+          <a
+            href="mailto:abinbinusam@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-cyan-500 text-cyan-400 rounded-lg font-bold hover:bg-cyan-500/10 transition-all"
           >
             <Send size={18} />
             Say Hello
           </a>
         </div>
-        
+
         <footer className="text-center text-slate-600 mt-20 text-sm">
           <p>@2026 ABS. Merci!</p>
         </footer>
